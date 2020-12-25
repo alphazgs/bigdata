@@ -1,7 +1,8 @@
+package WC
+
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.api.scala._
-
 
 object StreamWordCount {
 

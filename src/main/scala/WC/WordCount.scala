@@ -1,4 +1,6 @@
-import org.apache.flink.api.scala.ExecutionEnvironment
+package WC
+
+import org.apache.flink.api.scala.{DataSet, ExecutionEnvironment}
 import org.apache.flink.api.scala._
 
 //批处理WordCount
