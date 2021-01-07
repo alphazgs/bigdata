@@ -1,3 +1,4 @@
-val dd = 4
-
-val ff=(x:Int)=> if(x > 3) Seq("FF") else Seq("gg")
+def f[T](x:T)={
+  println(x)
+}
+f("dmlkemdle")

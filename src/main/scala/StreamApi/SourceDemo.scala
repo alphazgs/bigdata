@@ -46,12 +46,17 @@ object SourceDemo {
     //    1. 从集合读取数据集
     //     */
     val env = StreamExecutionEnvironment.getExecutionEnvironment //创建执行环境
-    //    val stream1 = env
-    //      .fromCollection(List(
-    //        SensorReading("sensor_1", 154771899, 35.8),
-    //        SensorReading("sensor_2", 154771898, 35.5),
-    //        SensorReading("sensor_3", 154771897, 35.4)
-    //      ))
+        val stream1 = env
+          .fromCollection(List(
+            SensorReading("sensor_1", 154771899, 35.8),
+            SensorReading("sensor_2", 154771898, 35.5),
+            SensorReading("sensor_3", 154771897, 35.4)
+          ))
+        stream1.print()
+
+
+
+
     ////    env.fromElements(1.0,35,"hello")//更简单做测试
     //    val ss:DataStream[Char] = stream1.map(_.id.charAt(1))
     //    ss.print().setParallelism(1)
@@ -76,11 +81,11 @@ object SourceDemo {
     /*
     4.自定义Source
      */
-    val mySource = new MySensorSource
-    val stream4: DataStream[SensorReading] = env.addSource(mySource)
-    stream4.keyBy("id")
-      .timeWindow(Time.seconds(5))
-      .sum("temperature").print()
+//    val mySource = new MySensorSource
+//    val stream4: DataStream[SensorReading] = env.addSource(mySource)
+//    stream4.keyBy("id")
+//      .timeWindow(Time.seconds(5))
+//      .sum("temperature").print()
     env.execute()
 
 
